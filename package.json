@@ -16,7 +16,17 @@
   },
   "keywords": [
     "fastify",
-    "prisma"
+    "prisma",
+    "docker",
+    "typescript",
+    "nodejs",
+    "postgresql",
+    "vitest",
+    "eslint",
+    "husky",
+    "lint-staged",
+    "prettier",
+    "tsx"
   ],
   "author": "Tommy Tsang",
   "license": "ISC",
