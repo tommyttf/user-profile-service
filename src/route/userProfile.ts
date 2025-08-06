@@ -80,11 +80,7 @@ const userProfileRoutes: FastifyPluginAsync = async (fastify) => {
         ...data,
         dateOfBirth: new Date(data.dateOfBirth),
       });
-      return reply.status(201).send({
-        ...profile,
-        dateOfBirth: profile.dateOfBirth.toISOString().split('T')[0],
-        createdAt: profile.createdAt.toISOString(),
-      });
+      return reply.status(201).send(profile);
     },
   });
 
@@ -114,11 +110,7 @@ const userProfileRoutes: FastifyPluginAsync = async (fastify) => {
         ...data,
         dateOfBirth: data.dateOfBirth ? new Date(data.dateOfBirth) : undefined,
       });
-      return reply.status(200).send({
-        ...profile,
-        dateOfBirth: profile.dateOfBirth.toISOString().split('T')[0],
-        createdAt: profile.createdAt.toISOString(),
-      });
+      return reply.status(200).send(profile);
     },
   });
 };

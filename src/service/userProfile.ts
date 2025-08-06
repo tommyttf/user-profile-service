@@ -1,5 +1,5 @@
-import { PrismaClient, UserProfile } from '@prisma/client';
 import { CreateUserProfileInput, UpdateUserProfileInput } from '../type/userProfile';
+import { PrismaClient, UserProfile } from '@prisma/client';
 
 export class UserProfileService {
   constructor(private readonly prisma: PrismaClient) {}
@@ -18,9 +18,5 @@ export class UserProfileService {
 
   async updateProfile(id: string, data: UpdateUserProfileInput): Promise<UserProfile> {
     return this.prisma.userProfile.update({ where: { id }, data });
-  }
-
-  async deleteProfile(id: string): Promise<void> {
-    await this.prisma.userProfile.delete({ where: { id } });
   }
 }

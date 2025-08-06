@@ -1,6 +1,6 @@
 generator client {
   provider = "prisma-client-js"
-  output   = "../../node_modules/.prisma/client"
+  output   = "../node_modules/.prisma/client"
 }
 
 datasource db {
@@ -9,10 +9,10 @@ datasource db {
 }
 
 model UserProfile {
-  id    String @id @default(cuid())
-  firstName String @db.VarChar(100)
-  lastName String @db.VarChar(100)
+  id          String   @id @default(cuid())
+  firstName   String   @db.VarChar(100)
+  lastName    String   @db.VarChar(100)
   dateOfBirth DateTime @db.Date
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
